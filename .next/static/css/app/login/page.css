@@ -1,0 +1,39 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[12].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/ui/fonts.ts","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"inter"} ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+  font-family: '__Inter_Fallback_725fdb';
+  src: local("Arial");
+  ascent-override:90.20%;
+  descent-override:22.48%;
+  line-gap-override:0.00%;
+  size-adjust:107.40%;
+}@font-face {font-family: '__Inter_Fallback_Fallback_725fdb';src: local("Arial");ascent-override: 90.20%;descent-override: 22.48%;line-gap-override: 0.00%;size-adjust: 107.40%
+}.__className_725fdb {font-family: '__Inter_Fallback_725fdb', '__Inter_Fallback_Fallback_725fdb';font-style: normal
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[12].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/ui/fonts.ts","import":"Montserrat","arguments":[{"subsets":["latin"]}],"variableName":"monserrat"} ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+  font-family: '__Montserrat_Fallback_f4d50f';
+  src: local("Arial");
+  ascent-override:84.95%;
+  descent-override:22.03%;
+  line-gap-override:0.00%;
+  size-adjust:113.95%;
+}@font-face {font-family: '__Montserrat_Fallback_Fallback_f4d50f';src: local("Arial");ascent-override: 84.95%;descent-override: 22.03%;line-gap-override: 0.00%;size-adjust: 113.95%
+}.__className_f4d50f {font-family: '__Montserrat_Fallback_f4d50f', '__Montserrat_Fallback_Fallback_f4d50f';font-style: normal
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[12].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/ui/fonts.ts","import":"Lusitana","arguments":[{"subsets":["latin"],"weight":"400"}],"variableName":"lusitana"} ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+  font-family: '__Lusitana_Fallback_89edaa';
+  src: local("Times New Roman");
+  ascent-override:92.34%;
+  descent-override:32.94%;
+  line-gap-override:0.00%;
+  size-adjust:103.53%;
+}@font-face {font-family: '__Lusitana_Fallback_Fallback_89edaa';src: local("Times New Roman");ascent-override: 92.34%;descent-override: 32.94%;line-gap-override: 0.00%;size-adjust: 103.53%
+}.__className_89edaa {font-family: '__Lusitana_Fallback_89edaa', '__Lusitana_Fallback_Fallback_89edaa';font-weight: 400;font-style: normal
+}
