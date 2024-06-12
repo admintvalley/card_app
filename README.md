@@ -1,4 +1,4 @@
-## Next.js App Router Course - Starter
+## Procedure and Task Management
 
 This is the starter template for the Next.js App Router Course. It contains the starting code for the dashboard application.
 
