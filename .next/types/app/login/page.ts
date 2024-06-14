@@ -1,4 +1,4 @@
-// File: /Users/nsilvazu2/Development/card_app/app/login/page.tsx
+// File: /Users/melissa/dev/nextjs-dashboard/app/login/page.tsx
 import * as entry from '../../../../app/login/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
@@ -21,6 +21,7 @@ checkFields<Diff<{
   generateMetadata?: Function
   viewport?: any
   generateViewport?: Function
+  experimental_ppr?: boolean
   
 }, TEntry, ''>>()
 
