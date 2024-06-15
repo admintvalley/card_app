@@ -1,3 +1,12 @@
+
+const date = new Date();
+
+let day = date.getDate();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+
+// This arrangement can be altered based on how we want the date's format to appear.
+let currentDate = `${year}-${month}-${day}`;
 // This file contains placeholder data that you'll be replacing with real data in the Data Fetching chapter:
 // https://nextjs.org/learn/dashboard-app/fetching-data
 const users = [
@@ -165,6 +174,53 @@ const invoices = [
   },
 ];
 
+const categories = [
+  {
+    category_id: 1,
+    title: "yellow",
+    description: 'category',
+    created_at: currentDate,
+    updated_at: currentDate
+  },{
+    category_id: 2,
+    title: "orange",
+    description: 'category orange',
+    created_at: currentDate,
+    updated_at: currentDate
+  },{
+    category_id: 3,
+    title: "blue",
+    description: 'category blue',
+    created_at: currentDate,
+    updated_at: currentDate
+  },{
+    category_id: 4,
+    title: "red",
+    description: 'category red',
+    created_at: currentDate,
+    updated_at: currentDate
+  },{
+    category_id: 5,
+    title: "purple",
+    description: 'category purple',
+    created_at: currentDate,
+    updated_at: currentDate
+  },{
+    category_id: 6,
+    title: "green",
+    description: 'category green',
+    created_at: currentDate,
+    updated_at: currentDate
+  },{
+    category_id: 7,
+    title: "weeds",
+    description: 'category weeds',
+    created_at: currentDate,
+    updated_at: currentDate
+  },
+];
+
+
 const revenue = [
   { month: 'Jan', revenue: 2000 },
   { month: 'Feb', revenue: 1800 },
@@ -185,4 +241,5 @@ module.exports = {
   customers,
   invoices,
   revenue,
+  categories
 };
