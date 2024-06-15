@@ -6,6 +6,7 @@ import { fetchCardData } from '@/app/lib/data';
 import { Suspense } from 'react';
 import { RevenueChartSkeleton,  LatestInvoicesSkeleton,  CardsSkeleton,} from '@/app/ui/skeletons';
 import CardWrapper from '@/app/ui/dashboard/cards';
+import CardCategories from '@/app/ui/dashboard/card-categories';
 
 
 export default async function Page() {
@@ -35,7 +36,7 @@ export default async function Page() {
           <LatestInvoices />
         </Suspense>
         <Suspense fallback={<LatestInvoicesSkeleton />}>
-          <LatestInvoices />
+          <CardCategories />
         </Suspense>
       </div>
     </main>
