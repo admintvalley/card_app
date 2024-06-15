@@ -16,6 +16,12 @@ const users = [
     email: 'user@nextmail.com',
     password: '123456',
   },
+  {
+    id: '252344b2-4001-2325-9855-fec4b6a6442a',
+    name: 'Admin',
+    email: 'admin@valleylandscape.ca',
+    password: '123456',
+  },
 ];
 
 const customers = [
@@ -178,7 +184,7 @@ const categories = [
   {
     category_id: 1,
     title: "yellow",
-    description: 'category',
+    description: 'category yellow',
     created_at: currentDate,
     updated_at: currentDate
   },{
