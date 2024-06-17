@@ -8,7 +8,7 @@ export default function AcmeLogo() {
       className={`${lusitana.className} flex flex-row items-center leading-none text-white`}
     >
       <Image src="https://www.valleylandscape.ca/wp-content/uploads/2023/03/icon.svg" alt='logo' width={56} height={56} ></Image>
-      <p className="text-[44px]">Valley Landscape</p>
+      <p className="text-[32px]">Valley Landscape</p>
     </div>
   );
 }
