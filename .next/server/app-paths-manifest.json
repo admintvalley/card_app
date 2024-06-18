@@ -1,3 +1,4 @@
 {
+  "/dashboard/profile/page": "app/dashboard/profile/page.js",
   "/dashboard/(overview)/page": "app/dashboard/(overview)/page.js"
 }

@@ -20,7 +20,7 @@ export default async function CardCategories() { // Remove props
                 <div className="fle">
 
                   <div className="min-w-0">
-                    <div className="max-w-sm rounded overflow-hidden shadow-lg border border-0 border-b-2 border-solid"
+                    <div className="max-w-sm rounded overflow-hidden shadow-lg border border-b-2 border-solid"
                     style={{ borderColor: category.title }}>
                       <div className="px-6 py-4">
                         <div className="font-bold text-xl mb-2"  style={{ color: category.title }}>{ category.title }</div>
