@@ -9,7 +9,9 @@ module.exports = {
         {
           protocol: 'https',
           hostname: 'www.valleylandscape.ca',
-          port: '',
+        }, {
+          protocol: 'https',
+          hostname: 'www.vercel.com',
         },
       ],
     },

@@ -2,12 +2,12 @@
   "node": {
     "1a7de17a98ea7a9aa9a5ebe938d0793a1a831c1c": {
       "workers": {
-        "app/dashboard/(overview)/page": "(rsc)/./node_modules/.pnpm/next@15.0.0-rc.0_@babel+core@7.24.6_react-dom@19.0.0-rc-6230622a1a-20240610_react@19.0.0-rc-6_eyrfp2s3kjd2bv6egpagcezi64/node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fmelissa%2Fdev%2Fnextjs-dashboard%2Fapp%2Fui%2Fdashboard%2Fsidenav.tsx%22%2C%5B%22%24%24ACTION_0%22%5D%5D%5D&__client_imported__=!",
-        "app/dashboard/profile/page": "(rsc)/./node_modules/.pnpm/next@15.0.0-rc.0_@babel+core@7.24.6_react-dom@19.0.0-rc-6230622a1a-20240610_react@19.0.0-rc-6_eyrfp2s3kjd2bv6egpagcezi64/node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fmelissa%2Fdev%2Fnextjs-dashboard%2Fapp%2Fui%2Fdashboard%2Fsidenav.tsx%22%2C%5B%22%24%24ACTION_0%22%5D%5D%5D&__client_imported__=!"
+        "app/dashboard/profile/page": "(rsc)/./node_modules/.pnpm/next@15.0.0-rc.0_@babel+core@7.24.6_react-dom@19.0.0-rc-6230622a1a-20240610_react@19.0.0-rc-6_eyrfp2s3kjd2bv6egpagcezi64/node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fmelissa%2Fdev%2Fnextjs-dashboard%2Fapp%2Fui%2Fdashboard%2Fsidenav.tsx%22%2C%5B%22%24%24ACTION_0%22%5D%5D%5D&__client_imported__=!",
+        "app/dashboard/(overview)/page": "(rsc)/./node_modules/.pnpm/next@15.0.0-rc.0_@babel+core@7.24.6_react-dom@19.0.0-rc-6230622a1a-20240610_react@19.0.0-rc-6_eyrfp2s3kjd2bv6egpagcezi64/node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fmelissa%2Fdev%2Fnextjs-dashboard%2Fapp%2Fui%2Fdashboard%2Fsidenav.tsx%22%2C%5B%22%24%24ACTION_0%22%5D%5D%5D&__client_imported__=!"
       },
       "layer": {
-        "app/dashboard/(overview)/page": "rsc",
-        "app/dashboard/profile/page": "rsc"
+        "app/dashboard/profile/page": "rsc",
+        "app/dashboard/(overview)/page": "rsc"
       }
     },
     "6ba005f4f6e07168ecc487def23439bb08963154": {
@@ -44,5 +44,5 @@
     }
   },
   "edge": {},
-  "encryptionKey": "FykVL5kIopdhy7FPt25UwodLMMZczPrPixECafXC30A="
+  "encryptionKey": "b0m0HcKZ+3nIlQOh9YRs4eUTmIegcPO7pi0fWnuvKI0="
 }
