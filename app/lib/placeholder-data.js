@@ -182,49 +182,67 @@ const invoices = [
 
 const categories = [
   {
-    category_id: 1,
+    id:'0ae1bc72-be54-4474-b7f4-6e23b67b2ad4',
     title: "yellow",
     description: 'category yellow',
     created_at: currentDate,
     updated_at: currentDate
   },{
-    category_id: 2,
+    id:'be396495-e94c-4814-b7ce-6b9ee55344c7',
     title: "orange",
     description: 'category orange',
     created_at: currentDate,
     updated_at: currentDate
   },{
-    category_id: 3,
+    id:'f9b53179-9c01-4107-a4d0-69fadeb4ed3a',
     title: "blue",
     description: 'category blue',
     created_at: currentDate,
     updated_at: currentDate
   },{
-    category_id: 4,
+    id:'1468510f-1c2b-4016-bf3f-fb470dc3927b',
     title: "red",
     description: 'category red',
     created_at: currentDate,
     updated_at: currentDate
   },{
-    category_id: 5,
+    id:'5658d8e3-6961-4e57-b9db-09e020c6cbf6',
     title: "purple",
     description: 'category purple',
     created_at: currentDate,
     updated_at: currentDate
   },{
-    category_id: 6,
+    id:'2643279f-3bf6-498b-b07d-15d7df4ccd32',
     title: "green",
     description: 'category green',
     created_at: currentDate,
     updated_at: currentDate
   },{
-    category_id: 7,
+    id:'30bf063e-e90a-40c6-afac-1a71385f77b1',
     title: "weeds",
     description: 'category weeds',
     created_at: currentDate,
     updated_at: currentDate
   },
 ];
+
+const cardPriority = [
+  { description: 'low', level: "1" },
+  { description: 'mid', level: "2" },
+  { description: 'high', level: "3" }
+];
+
+const cards = [
+  {
+    category_id: categories[0].id,
+    title: "Winter Daily Checks",
+    description: "Start Up\n1. Run Webasto heaters for 15-30min before starting trucks/equipment.\n- May need to run longer in colder conditions.		\n2. Check fluid levels.		\n3. Start trucks & let run for 30mins.		\n4. Submit vehicle checklist form on ProCore.		\n5. Top up with fuel, if needed.		\nShut Down		\nDump Trucks		\nMain power shut off switch is turned off.		\nLoaders		\nMain power shut off switch is turned off.		\nSafety Lock-out  Switch turned on.		\nSkid Steers		\nMain Power Shut Off Switch is turned off once the DEF Purge light		\nhas turned off.		\nPeterbilt 220		\nMain power shut off switch is turned off.",
+    revision: "2",
+    created_at: currentDate,
+    updated_at: currentDate,
+    priority_id: cardPriority[0].level
+  }]
+
 
 
 const revenue = [
@@ -242,10 +260,15 @@ const revenue = [
   { month: 'Dec', revenue: 4800 },
 ];
 
+
+
+
 module.exports = {
   users,
   customers,
   invoices,
   revenue,
-  categories
+  categories,
+  cardPriority,
+  cards
 };
