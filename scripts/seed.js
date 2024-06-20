@@ -4,7 +4,9 @@ const {
   customers,
   revenue,
   users,
-  categories
+  categories,
+  cardPriority,
+  cards
 } = require('../app/lib/placeholder-data.js');
 const bcrypt = require('bcrypt');
 
@@ -161,6 +163,42 @@ async function seedRevenue(client) {
   }
 }
 
+
+async function seedCardPriority(client) {
+  try {
+    // Create the "cards_priority" table if it doesn't exist
+    const createTable = await client.sql`
+      CREATE TABLE IF NOT EXISTS cards_priority (
+        description VARCHAR(12) NOT NULL UNIQUE,
+        level INT NOT NULL UNIQUE
+      );
+    `;
+
+    console.log(`Created "cards_priority" table`);
+
+    // Insert data into the "cards_priority" table
+    const insertedCardPriority = await Promise.all(
+      cardPriority.map(
+        (cp) => client.sql`
+        INSERT INTO cards_priority (description, level)
+        VALUES (${cp.description}, ${cp.level})
+        ON CONFLICT (description) DO NOTHING;
+      `,
+      ),
+    );
+
+    console.log(`Seeded ${cardPriority.length} cards_priority`);
+
+    return {
+      createTable,
+      priority: insertedCardPriority,
+    };
+  } catch (error) {
+    console.error('Error seeding card priority:', error);
+    throw error;
+  }
+}
+
 async function seedCardCategories(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
@@ -168,8 +206,7 @@ async function seedCardCategories(client) {
     // Create the "categories" table if it doesn't exist
     const createTable = await client.sql`
     CREATE TABLE IF NOT EXISTS card_categories (
-    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-    category_id INT NOT NULL,
+    id UUID PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description VARCHAR(255) NOT NULL,
     created_at DATE NOT NULL,
@@ -178,13 +215,13 @@ async function seedCardCategories(client) {
 `;
 
     console.log(`Created "card_categories" table`);
-
+    
     // Insert data into the "card_categories" table
     const insertedCategories = await Promise.all(
       categories.map(
         (category) => client.sql`
-        INSERT INTO card_categories (category_id, title, description, created_at, updated_at)
-        VALUES (${category.category_id}, ${category.title}, ${category.description}, ${category.created_at}, ${category.updated_at})
+        INSERT INTO card_categories (id, title, description, created_at, updated_at)
+        VALUES ( ${category.id}, ${category.title}, ${category.description}, ${category.created_at}, ${category.updated_at})
         ON CONFLICT (id) DO NOTHING;
       `,
       ),
@@ -202,6 +239,48 @@ async function seedCardCategories(client) {
   }
 }
 
+async function seedCardsTable(client) {
+  try {
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+
+    // Create the "cards" table if it doesn't exist
+    const createTable = await client.sql`
+    CREATE TABLE IF NOT EXISTS cards (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    category_id UUID NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    revision VARCHAR,
+    created_at DATE NOT NULL,
+    updated_at DATE NOT NULL,
+    priority_id VARCHAR
+  );
+`;
+
+    console.log(`Created "card_categories" table`);
+
+    // Insert data into the "card_categories" table
+    const insertedCards = await Promise.all(
+      cards.map(
+        (card) => client.sql`
+        INSERT INTO cards (category_id, title, description, revision, created_at, updated_at,priority_id)
+        VALUES (${card.category_id}, ${card.title},${card.description}, ${card.revision}, ${card.created_at}, ${card.updated_at}, ${card.priority})
+        ON CONFLICT (id) DO NOTHING;
+      `,
+      ),
+    );
+
+    console.log(`Seeded ${insertedCards.length} cards`);
+
+    return {
+      createTable,
+      cards: insertedCards,
+    };
+  } catch (error) {
+    console.error('Error seeding cards:', error);
+    throw error;
+  }
+}
 async function main() {
   const client = await db.connect();
 
@@ -210,6 +289,8 @@ async function main() {
   await seedInvoices(client);
   await seedRevenue(client);
   await seedCardCategories(client);
+  await seedCardPriority(client);
+  await seedCardsTable(client);
 
   await client.end();
 }

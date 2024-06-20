@@ -85,9 +85,16 @@ export type InvoiceForm = {
   status: 'pending' | 'paid';
 };
 
-
 export type CategoriesTableType = {
-  category_id: number,
+  id: string,
+  title: string,
+  description: string,
+  created_at: string,
+  updated_at: string
+};
+
+export type CardTableType = {
+  id: string,
   title: string,
   description: string,
   created_at: string,

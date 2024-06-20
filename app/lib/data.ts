@@ -7,7 +7,8 @@ import {
   LatestInvoiceRaw,
   User,
   Revenue,
-  CategoriesTableType
+  CategoriesTableType,
+  CardTableType
 } from './definitions';
 import { formatCurrency } from './utils';
 import { unstable_noStore as noStore } from 'next/cache';
@@ -251,7 +252,7 @@ export async function fetchCardCategories() {
   try {
     const data = await sql<CategoriesTableType>`
       SELECT
-        category_id,
+        id,
         title,
         description
       FROM card_categories
@@ -262,5 +263,32 @@ export async function fetchCardCategories() {
   } catch (err) {
     console.error('Database Error:', err);
     throw new Error('Failed to fetch all card categories.');
+  }
+}
+
+export async function fetchCardsByCategoryTitle(title: string) {
+  noStore();
+  try {
+    const dataCategoryCard = await sql<CategoriesTableType>`
+      SELECT
+       *
+      FROM card_categories
+      WHERE title = ${title};
+    `;
+    const categoryID = dataCategoryCard.rows;
+    console.log('Database info cards:', categoryID[0].id);
+    
+    const data = await sql<CardTableType>`
+    SELECT
+     *
+    FROM cards
+    WHERE category_id = ${categoryID[0].id};
+  `;
+  console.log('Database info cards:', data.rows);
+
+    return data.rows;
+  } catch (err) {
+    console.error('Database Error:', err);
+  //  throw new Error('Failed to fetch all card categories.');
   }
 }

@@ -2,6 +2,7 @@ import { ArrowPathIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { lusitana } from '@/app/ui/fonts';
 import { fetchCardCategories } from '@/app/lib/data';
+import { RedirectToCategory } from './buttons';
 
 export default async function CardCategories() { // Remove props
   const CardCategories = await fetchCardCategories();
@@ -15,12 +16,12 @@ export default async function CardCategories() { // Remove props
           {CardCategories.map((category, i) => {
             return (
               <div
-                key={category.category_id} className='flex flex-row items-center justify-between py-4 px-2'
+                key={category.id} className='flex flex-row items-center justify-between py-4 px-2'
               >
                 <div className="fle">
 
                   <div className="min-w-0">
-                    <div className="max-w-sm rounded overflow-hidden shadow-lg border border-0 border-b-2 border-solid"
+                    <div className="max-w-sm rounded overflow-hidden shadow-lg border border-b-2 border-solid"
                     style={{ borderColor: category.title }}>
                       <div className="px-6 py-4">
                         <div className="font-bold text-xl mb-2"  style={{ color: category.title }}>{ category.title }</div>
@@ -32,7 +33,8 @@ export default async function CardCategories() { // Remove props
                         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
                         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
                         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-                      </div>
+                      </div>{category.title} 
+                      <RedirectToCategory title={category.title} />
                     </div>
                   </div>
                 </div>
