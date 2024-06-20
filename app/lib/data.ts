@@ -251,7 +251,7 @@ export async function fetchCardCategories() {
   try {
     const data = await sql<CategoriesTableType>`
       SELECT
-        category_id,
+        id,
         title,
         description
       FROM card_categories

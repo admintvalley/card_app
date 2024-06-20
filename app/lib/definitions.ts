@@ -87,7 +87,7 @@ export type InvoiceForm = {
 
 
 export type CategoriesTableType = {
-  category_id: number,
+  id: string,
   title: string,
   description: string,
   created_at: string,
