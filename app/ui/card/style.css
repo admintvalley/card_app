@@ -14,16 +14,19 @@
     left: 0;
     transition: all 700ms ease;
     backface-visibility: hidden;
+
 }
 .card__side--back {
     transform: rotateY(180deg);
 }
-.card:hover .card__side--front {
+.card .card__side--front.flipped {
     transform: rotateY(-180deg);
 }
-.card:hover .card__side--back {
+.card .card__side--back.flipped{
     transform: rotateY(0);
 }
+
+
 body {
     width: 100vw;
     height: 100vh;
