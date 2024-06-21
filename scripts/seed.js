@@ -249,9 +249,10 @@ async function seedCardsTable(client) {
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
     category_id UUID NOT NULL,
     title VARCHAR(255) NOT NULL,
-    description TEXT NOT NULL,
+    description_front TEXT NOT NULL,
+    description_back TEXT NOT NULL,
     revision VARCHAR,
-    image_url VARCHAR
+    image_url VARCHAR,
     created_at DATE NOT NULL,
     updated_at DATE NOT NULL,
     priority_id VARCHAR
@@ -264,8 +265,8 @@ async function seedCardsTable(client) {
     const insertedCards = await Promise.all(
       cards.map(
         (card) => client.sql`
-        INSERT INTO cards (category_id, title, description, revision, image_url,created_at, updated_at,priority_id)
-        VALUES (${card.category_id}, ${card.title},${card.description}, ${card.revision},${card.image_url}, ${card.created_at}, ${card.updated_at}, ${card.priority})
+        INSERT INTO cards (category_id, title, description_front,description_back, revision, image_url,created_at, updated_at,priority_id)
+        VALUES (${card.category_id}, ${card.title},${card.description_front},${card.description_back}, ${card.revision},${card.image_url}, ${card.created_at}, ${card.updated_at}, ${card.priority})
         ON CONFLICT (id) DO NOTHING;
       `,
       ),

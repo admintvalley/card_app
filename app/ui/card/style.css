@@ -2,16 +2,13 @@
 
 .card {
     height: 15rem;
-    width: 20rem;
+    width: 24rem;
     perspective: 100rem;
     position: relative;
 }
 .card__side {
-    height: 100%;
     width: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
     transition: all 700ms ease;
     backface-visibility: hidden;
 

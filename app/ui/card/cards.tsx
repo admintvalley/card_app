@@ -31,7 +31,7 @@ export default function CardTable({
       </div>
 
       {card?.map((card) => (
-        <div className="flex justify-center card" key={card.id} >
+        <div className="flex justify-center" key={card.id} >
           <div className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3 border"
           style={{ borderColor: title }}
           onClick={handleModal}
