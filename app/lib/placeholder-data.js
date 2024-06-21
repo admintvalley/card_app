@@ -236,13 +236,75 @@ const cards = [
   {
     category_id: categories[0].id,
     title: "Winter Daily Checks",
-    description: "Start Up\n1. Run Webasto heaters for 15-30min before starting trucks/equipment.\n- May need to run longer in colder conditions.		\n2. Check fluid levels.		\n3. Start trucks & let run for 30mins.		\n4. Submit vehicle checklist form on ProCore.		\n5. Top up with fuel, if needed.		\nShut Down		\nDump Trucks		\nMain power shut off switch is turned off.		\nLoaders		\nMain power shut off switch is turned off.		\nSafety Lock-out  Switch turned on.		\nSkid Steers		\nMain Power Shut Off Switch is turned off once the DEF Purge light		\nhas turned off.		\nPeterbilt 220		\nMain power shut off switch is turned off.",
+    description_front: "Start Up\n1. Run Webasto heaters for 15-30min before starting trucks/equipment.\n- May need to run longer in colder conditions.		\n2. Check fluid levels.		\n3. Start trucks & let run for 30mins.		\n4. Submit vehicle checklist form on ProCore.		\n5. Top up with fuel, if needed.		\nShut Down		\nDump Trucks		\nMain power shut off switch is turned off.		\nLoaders		\nMain power shut off switch is turned off.		\nSafety Lock-out  Switch turned on.		\nSkid Steers		\nMain Power Shut Off Switch is turned off once the DEF Purge light		\nhas turned off.		\nPeterbilt 220		\nMain power shut off switch is turned off.",
+    description_back:"",
     revision: "2",
+    image_url:null,
     created_at: currentDate,
     updated_at: currentDate,
     priority_id: cardPriority[0].level
-  }]
-
+  },
+  {
+    category_id: categories[0].id,
+    title: "End of Day Shop Checks",
+    description: 'Checklist	\n1. Are all the doors locked?	\n2. Are the blankets infront of the back door?	\n3. Is the Air Compressor turned off?	\n4. Is the Water Pump turned off?	\n5. If you used a piece of equipment: 	\n -Did you complete Shut Down procedures?	\n -Did you put back the keys?	\n5. Is the main door locked?'    ,
+    revision: "2",
+    image_url:null,
+    created_at: currentDate,
+    updated_at: currentDate,
+    priority_id: cardPriority[0].level
+  },
+  {
+    category_id: categories[0].id,
+    title: "Meetings",
+    description: "Morning Meeting\n- Review daily plan.\n- What needs to be done specifically today? (Give numbers & quantities)\n- When does it need to be done by?\n- What are the hazards of the day?\n- Are we on schedule?\n- Do we have the appropriate tools/PPE?\n- Has the full-kit been reviewed?\n- Hand out cards/deligate tasks.\n\n\nAfter Lunch Meeting\n- Are we on schedule?\n- How can we speed things up?\n- What else can be done if we are ahead of schedule?\n- Is there any new obstacles or have plans changed?\n- Was it caused by a 3rd party or our company?\n\n\nEnd of Day Meeting\n- What did or did not get done?\n- Are we on schedule?\n- What is happening tomorrow?\n- What time are we starting?\n- What do we need?\n     - People/Tools/Equipmet/etc.\n- Has all documentation been sent in?\n- Counts for trees/shrubs been completed?",
+    revision: "4",
+    image_url:null,
+    created_at: currentDate,
+    updated_at: currentDate,
+    priority_id: cardPriority[0].level
+  },
+  {
+    category_id: categories[0].id,
+    title: "Snow Removal - Sidewalks",
+    description: "\nSidewalks\n1. Clock into yard for unloading/loading equipment.\n2. Complete physical & digital vehicle/equipment inspection forms.\n3. Complete a daily hazard on SiteMax & have a Daily Meeting.\n4. Fill out a physical & a digital form for sidewalks at the yard.\n5. Once ready to leave, clock into travel time to your next site.\n6. Once at site, clock into snow removal- sidewalks.\n7. Take BEFORE pictures of the site, including the parking lots, & attach them to the digital form.\n8. Clear the sidewalks & spread ice melt.\n     - Put down rock if needed on any icey areas.\n9. Take AFTER pictures once the site is completed, & attach them to the digital form.\n10. Complete a digital snow form for each site & update physical form.\n11. Continue steps 5-10 for each site.\n12. At the end of the night clean off truck & equipment at the car wash.\n13. Once back at the yard, clock back into unloading/loading equipment.\n     - Re-load the truck so its ready for next time.\n14. Complete digital form at the yard & attach picture of physical form.\n\nNotes\n- Drive with caution, keep a 6 second space between vehicles.\n- Never put gloves on dash of the trucks.\n- Knock off your boots before getting into the trucks.\n\nSiteMax\n1. Select the site on the main screen.\n2. Select the plus button at the bottom of the screen.\n3. Select Site Reports or Safety Reports.\n4. Select the Form you want to fill out.\n5. Fill out the form and SAVE it.\n6. To edit the form, go back to the site page and all the completed forms\n      will be at the bottom.",
+    revision: "3",
+    image_url:null,
+    created_at: currentDate,
+    updated_at: currentDate,
+    priority_id: cardPriority[0].level
+  },
+  {
+    category_id: categories[0].id,
+    title: "Snow Removal - Sidewalks",
+    description: "\nClearing\n1. Clock into yard for unloading/loading equipment.\n2. Complete physical & digital vehicle/equipment inspection forms.\n3. Complete a daily hazard on SiteMax & have a Daily Meeting.\n4. Fill out a digital & a physical form for Clearing at the yard.\n5. Load trailer, making sure equipment & attachments are secure.\n     - Leaving equipment running in colder weather.\n6. Once ready to leave, clock into travel time to your next site.\n7. Once at site, clock into snow removal- clearing\n8. Take BEFORE pictures of the site & attach them to the digital form.\n9. Clear parking lots.\n     - Switch attachments to clean parking stalls & between vehicles.\n10. Take AFTER pictures once the site is completed & of the snow piles.\n     - Attach them to the digital form.\n11. Complete digital snow form for each site & update physical form.\n12. Continue steps 5-11 for each site.\n13. At the end of the night, clean off truck & equipment at the car wash.\n14. Once back at the yard, clock back into unloading/loading equipment.\n     - Clean out snow & ice from inside tracks.\n     - Top up with fuel & park it inside the shop.\n15. Complete digital form at the yard & attach picture of physical form.\n\nNotes\n- Drive with caution, keep a 6 second space between vehicles.\n- Never put gloves on dash of the trucks.\n- Knock off your boots before getting into the trucks.\n\nSiteMax\n1. Select the site in the main screen.\n2. Select the plus button at the bottom of the screen.\n3. Select Site Reports or Safety Reports.\n4. Select the Form you want to fill out.\n5. Fill out the form and SAVE it.\n6. To edit the form, go back to the site page and all the completed forms will be at the bottom.",
+    revision: "3",
+    image_url:null,
+    created_at: currentDate,
+    updated_at: currentDate,
+    priority_id: cardPriority[0].level
+  },
+  {
+    category_id: categories[0].id,
+    title: "Snow Removal - Sanding/Liquid",
+    description: "\nSanding/Liquid\n1. Clock into yard for unloading/loading equipment.\n2. Complete physical & digital vehicle/equipment inspection forms.\n3. Complete a daily hazard on SiteMax & have a Daily Meeting.\n4. Fill out a physical & a digital form for Sanding/Liquid at the yard.\n5. Load truck with rock/liquid, and test if equipment is working correctly.\n     - Do not leave the yard without testing the equipment.\n6. Once ready to leave, clock into travel time to your next site.\n7. Once at site, clock into snow removal- sanding/liquid.\n8. Take BEFORE pictures of the site & attach them to the digital form.\n9. Put down the rock/liquid in the parking lot.\n     - Keep track of your kms or amount of liquid put down.\n10. Take AFTER pictures once the site is completed, & attach them to the digital form.\n11. Complete digital snow form for each site & update physical form.\n12. Continue steps 5-11 for each site.\n13. At the end of the night, clean off truck & equipment at the car wash.\n14. Once back at the yard, clock back into unloading/loading equipment.\n     - Unload any extra rock or liquid & top it up with fuel.\n     - Plug the truck in.\n15. Complete digital form at the yard & attach picture of physical form.\n\nNotes\n- Drive with caution, keep a 6 second space between vehicles.\n- Never put gloves on dash of the trucks.\n- Knock off your boots before getting into the trucks.\n\nSiteMax\n1. Select the site in the main screen.\n2. Select the plus button at the bottom of the screen.\n3. Select Site Reports or Safety Reports.\n4. Select the Form you want to fill out.\n5. Fill out the form and SAVE it.\n6. To edit the form, go back to the site page and all the completed forms will be at the bottom.",
+    revision: "3",
+    image_url:null,
+    created_at: currentDate,
+    updated_at: currentDate,
+    priority_id: cardPriority[0].level
+  },
+  {
+    category_id: categories[0].id,
+    title: "Snow Removal - Sanding/Liquid",
+    description: "",
+    revision: "3",
+    image_url:null,
+    created_at: currentDate,
+    updated_at: currentDate,
+    priority_id: cardPriority[0].level
+  }
+]
 
 
 const revenue = [

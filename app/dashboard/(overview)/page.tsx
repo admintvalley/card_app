@@ -28,7 +28,7 @@ export default async function Page() {
           <CardWrapper />
         </Suspense>
       </div>
-    <div className="flex w-full flex-col md:col-span-4">
+    <div className="flex w-full flex-col md:col-span-2">
     <Suspense fallback={<RevenueChartSkeleton />}>
           <RevenueChart />
         </Suspense>

@@ -7,7 +7,7 @@ export function RedirectToCategory({ title }: { title: string }) {
   return (
     <Link
     href={`/dashboard/cards/${title}/`}
-    className="rounded-md border p-2 hover:bg-gray-100"
+    className="w-full rounded-md border p-2 hover:bg-gray-100"
     >
       <ArrowRightCircleIcon className="w-5" />
     </Link>
