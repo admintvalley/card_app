@@ -26,15 +26,17 @@ export default async function CardCategories() { // Remove props
                       <div className="px-6 py-4">
                         <div className="font-bold text-xl mb-2"  style={{ color: category.title }}>{ category.title }</div>
                         <p className="text-gray-700 text-base">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla.
+                          Here's go a desription of the category
                         </p>
                       </div>
-                      <div className="px-6 pt-4 pb-2">
+                      {/* <div className="px-6 pt-4 pb-2">
                         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
                         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
                         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-                      </div>{category.title} 
-                      <RedirectToCategory title={category.title} />
+                      </div> */}
+                      <div className="flex justify-center"> 
+                      <RedirectToCategory title={category.title} /></div>
+                      
                     </div>
                   </div>
                 </div>

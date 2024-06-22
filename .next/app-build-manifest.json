@@ -1,15 +1,14 @@
 {
   "pages": {
-    "/dashboard/cards/[id]/page": [
+    "/dashboard/(overview)/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/dashboard/cards/[id]/page.css",
-      "static/chunks/app/dashboard/cards/[id]/page.js"
+      "static/chunks/app/dashboard/(overview)/page.js"
     ],
-    "/dashboard/cards/[id]/not-found": [
+    "/dashboard/(overview)/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/cards/[id]/not-found.js"
+      "static/chunks/app/dashboard/(overview)/loading.js"
     ],
     "/dashboard/layout": [
       "static/chunks/webpack.js",
@@ -22,15 +21,16 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/dashboard/(overview)/page": [
+    "/dashboard/cards/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/(overview)/page.js"
+      "static/css/app/dashboard/cards/[id]/page.css",
+      "static/chunks/app/dashboard/cards/[id]/page.js"
     ],
-    "/dashboard/(overview)/loading": [
+    "/dashboard/cards/[id]/not-found": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/(overview)/loading.js"
+      "static/chunks/app/dashboard/cards/[id]/not-found.js"
     ]
   }
 }
