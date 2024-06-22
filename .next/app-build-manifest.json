@@ -21,12 +21,6 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/login/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/login/page.css",
-      "static/chunks/app/login/page.js"
-    ],
     "/dashboard/cards/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -37,16 +31,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/cards/[id]/not-found.js"
-    ],
-    "/dashboard/invoices/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/invoices/page.js"
-    ],
-    "/dashboard/invoices/error": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/invoices/error.js"
     ]
   }
 }

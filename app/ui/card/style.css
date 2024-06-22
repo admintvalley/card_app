@@ -1,1 +1,33 @@
 .sl{white-space: break-spaces}
+
+.card {
+    height: 15rem;
+    width: 24rem;
+    perspective: 100rem;
+    position: relative;
+}
+.card__side {
+    width: 100%;
+    position: absolute;
+    transition: all 700ms ease;
+    backface-visibility: hidden;
+
+}
+.card__side--back {
+    transform: rotateY(180deg);
+}
+.card .card__side--front.flipped {
+    transform: rotateY(-180deg);
+}
+.card .card__side--back.flipped{
+    transform: rotateY(0);
+}
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

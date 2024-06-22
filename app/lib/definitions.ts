@@ -95,8 +95,12 @@ export type CategoriesTableType = {
 
 export type CardTableType = {
   id: string,
+  category_id:string,
   title: string,
-  description: string,
+  description_front: string,
+  description_back: string,
+  revision:string,
+  image_url:string,
   created_at: string,
   updated_at: string
 };

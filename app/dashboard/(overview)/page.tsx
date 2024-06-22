@@ -20,24 +20,20 @@ export default async function Page() {
   
   return (
     <main>
-      <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
-        Dashboard
-      </h1>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      <Suspense fallback={<CardsSkeleton />}>
-          <CardWrapper />
+      
+    <div className="flex w-full flex-col md:col-span-2">
+      <div className="grid gap-6 grid-cols-2 lg:grid-cols-4">
+        <Suspense fallback={<LatestInvoicesSkeleton />}>
+          <CardCategories />
         </Suspense>
       </div>
-    <div className="flex w-full flex-col md:col-span-4">
-    <Suspense fallback={<RevenueChartSkeleton />}>
+        <Suspense fallback={<RevenueChartSkeleton />}>
           <RevenueChart />
         </Suspense>
         <Suspense fallback={<LatestInvoicesSkeleton />}>
           <LatestInvoices />
         </Suspense>
-        <Suspense fallback={<LatestInvoicesSkeleton />}>
-          <CardCategories />
-        </Suspense>
+      
       </div>
     </main>
   );
