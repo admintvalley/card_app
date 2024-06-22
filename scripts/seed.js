@@ -250,7 +250,7 @@ async function seedCardsTable(client) {
     category_id UUID NOT NULL,
     title VARCHAR(255) NOT NULL,
     description_front TEXT NOT NULL,
-    description_back TEXT NOT NULL,
+    description_back TEXT,
     revision VARCHAR,
     image_url VARCHAR,
     created_at DATE NOT NULL,
