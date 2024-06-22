@@ -26,7 +26,7 @@ export default async function CardCategories() { // Remove props
                       <div className="px-6 py-4">
                         <div className="font-bold text-xl mb-2"  style={{ color: category.title }}>{ category.title }</div>
                         <p className="text-gray-700 text-base">
-                          Here's go a desription of the category
+                          Heres go a desription of the category
                         </p>
                       </div>
                       {/* <div className="px-6 pt-4 pb-2">
