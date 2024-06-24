@@ -267,7 +267,7 @@ async function seedCardsTable(client) {
         (card) => client.sql`
         INSERT INTO cards (category_id, title, description_front,description_back, revision, image_url,created_at, updated_at,priority_id)
         VALUES (${card.category_id}, ${card.title},${card.description_front},${card.description_back}, ${card.revision},${card.image_url}, ${card.created_at}, ${card.updated_at}, ${card.priority})
-        ON CONFLICT (id) DO NOTHING;
+        ON CONFLICT (title) DO NOTHING;
       `,
       ),
     );
