@@ -623,10 +623,58 @@ const cards = [
     created_at: currentDate,
     updated_at: currentDate,
     priority_id: cardPriority[0].description
+  },{
+    category_id: categories[5].id,
+    title: "Planting Trees",
+    description_front:"\nChecklist		\n- Review full-kit.		\n- Equipment is in good working condition.		\n- Correct quantities of trees are on site.		\n    \nProcedure		\n1. Cut basket one row down from the eyelets & cut off burlap.		\n2. Carefully use track shovel to expose the root flare.		\n3. Place level on top of the root flare & measure distance to ground.		\n     - Make sure the tree is level before measuring the root flare.		\n4. Subtract 5cm if tree is planted on regular ground & 7cm if in a planter.		\n6. Measure the depth of the hole & adjust the height to the measurement.		\n7. Hook onto the basket evenly on each side & place tree in the hole.		\n     - Measure distance from curb or another object for correct placement.		\n8. Measure the height of tree from root flare to the ground. 		\n9. Step back 20ft and make sure the tree is straight.		\n     - Look at trunk for deciduous trees and whole tree for coniforous trees.		\n10. Start to backfill, making sure it is packed tightly with your feet.		\n    - Add bone meal half way through backfill process.		\n11. Make a firm and level tree well.		\n    - 45cm to the inside, 5cm high, 20cm across with sloping edges.		\n12. Install tree stakes in an equal triangle starting on the NW corner.		\n13. Install vinyl tubing & wire about 5ft up the tree or on the lowest branch.		\n     - Wrap wire around stake 3 times & back up the wire, cutting excess.		\n14. Tie orange ribbon on wire & remove any tags off the tree.		\n15. Place metal rodent protection around the trunk securing it with zip ties.",
+    description_back:"\nCloseout- What does complete look like?	\n- Tree is straight, wired, & watered.	\n- Tree well is the proper shape & size.	\n- Work area & tools are cleaned up.	\n- Garbage has been thown out.	\n- Foreman has approved the work.	\n  \nFull-Kit	\n- Site Plan     	- Zip Ties\n- Scale Ruler   	- Dunnage\n- Spray Paint   	- Post Pounder\n- Measuring Tape	- Paint Pen\n- Level         	- Spray Paint\n- Wire          	- Pruners\n- Tubing        	- Wheelbarrow\n- Orange Ribbon	\n- Rodent Protection	\n- Shovel	\n- Track Shovel	\n- Wire Cutters	\n- Knife	\n- Scissors	\n- Bone Meal	\n- Plywood	\n- Broom	\n- Rake	",
+    revision: "4",
+    image_url:null,
+    created_at: currentDate,
+    updated_at: currentDate,
+    priority_id: cardPriority[0].description
+  },{
+    category_id: categories[5].id,
+    title: "",
+    description_front:"",
+    description_back:"",
+    revision: "",
+    image_url:null,
+    created_at: currentDate,
+    updated_at: currentDate,
+    priority_id: cardPriority[0].description
+  },{
+    category_id: categories[5].id,
+    title: "Planting - Shrubs/Perennials",
+    description_front:"\nChecklist\n- Review full-kit.\n- Equipment is in good working condition.\n- Final grade is complete and planter is mounded in the middle.\n- Correct quantities of plants are on site.\n- Plants are marked out or placed.\n- Let the yard person know how many plants you took from the yard.\n\nProcedure\n1. Dig a hole on the marked area, that is twice as big as the plant pot.\n2. Remove plant from the pot by grabbing the base/stem.\n     - If plant is too tight, roll and squeeze the pot to loosen the roots.\n3. Scarcify the root ball.\n4. Place plant in hole at the same height as exisiting grade.\n5. Sprinkle a handful of bone meal around the root ball.\n6. Pack dirt around the plant tightly.\n7. Make a well around the drip line of the plant and firmly pack it down.\n     - Rake any excess dirt throughout the planter or remove from the area.\n8. As you are planting make sure the plants are in a straight line & evenly spaced.\n9. Take off any tags or ribbons before moving onto the next plant.\n\nNotes\n- When working in a tight area keep an eye on your surroundings, so you do not damage any other plants in the area or ones you just planted.",
+    description_back:"\n  Closeout- What does complete look like?		\n- Every plant has a well & excess soil has been smoothed out.		\n- No ribbons or tags on plants.		\n- Any garbage has been thrown out.		\n- All tools & equipment have been put away.		\n- Final work has been approved by forman.		\n		\nFull-Kit		\n- Site Plant	    - Shovel	  - Scissors\n- Scale Ruler   	- Rake	    - Planting Auger\n- Spray Paint   	- Broom	    - Mixed Fuel\n- Measuring Tape	-Bone Meal	- Garbage Bags\n- Measuring Wheel	- Pruner	  - Knife",
+    revision: "5",
+    image_url:null,
+    created_at: currentDate,
+    updated_at: currentDate,
+    priority_id: cardPriority[0].description
+  },{
+    category_id: categories[6].id,
+    title: "Canada Thistle",
+    description_front:"\nType:	Noxious Weed	\nLife Cycle:	Perennial	\nRoot:	Creeping Root	\nControl Methods:	Hand pulling & mowing.	\nChemicals: 	2,4-D, Aminopyralid, Chlorsulfuron, Clopy- ralid, Dicamba, Glyphosate Hexazinone, Metsulfuron- methyl, MCPA and Picloram 	\n\nSpraying:	Early June after the first flower buds are formed and before the first flowers or in fall regrowth during September and early October	",
+    description_back:"",
+    revision: "1",
+    image_url:null,
+    created_at: currentDate,
+    updated_at: currentDate,
+    priority_id: cardPriority[0].description
+  },{
+    category_id: categories[6].id,
+    title: "Dandilion",
+    description_front:"\nType:	Common Weed	\nLife Cycle:	Perennial	\nRoot:	Tap Root	\nControl Methods:	Tillage, mowing, hand pulling	\nChemicals: 	2,4-D, MCPA, dicamba, glyphosate	\nSpraying:	Early fall, late Augst to mid-Septmber or in early spring before flowering, early to mid-May",
+    description_back:"",
+    revision: "1",
+    image_url:null,
+    created_at: currentDate,
+    updated_at: currentDate,
+    priority_id: cardPriority[0].description
   }]
-
   
-
 
 const revenue = [
   { month: 'Jan', revenue: 2000 },
