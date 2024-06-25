@@ -248,7 +248,7 @@ async function seedCardsTable(client) {
     CREATE TABLE IF NOT EXISTS cards (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
     category_id UUID NOT NULL,
-    title VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL UNIQUE,
     description_front TEXT NOT NULL,
     description_back TEXT,
     revision VARCHAR,
