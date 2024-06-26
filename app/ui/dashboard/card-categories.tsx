@@ -7,12 +7,12 @@ import { RedirectToCategory } from './buttons';
 export default async function CardCategories() { // Remove props
   const CardCategories = await fetchCardCategories();
   return (
-    <div className="flex w-full flex-col md:col-span-4">
+    <div className="flex w-full flex-col col-span-4">
       <h4 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
         Card Categories
       </h4>
 
-      <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 items-center">
+      <div className="mt-4 grid sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 items-center">
           {CardCategories.map((category:any, i:number) => {
             return (
               <div
