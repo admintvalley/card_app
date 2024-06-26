@@ -13,7 +13,7 @@ export default async function CardCategories() { // Remove props
       </h4>
 
       <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 items-center">
-          {CardCategories.map((category, i) => {
+          {CardCategories.map((category:any, i:number) => {
             return (
               <div
                 key={category.id} className='flex flex-row justify-center py-4 px-2'
