@@ -19,7 +19,7 @@ export default function CardTable({
   const [modalActivate, setModalActivate] = useState(false);
   const [cardId, setCardId] = useState(0);
 
-  const handleModal = (id:number) => {
+  const handleModal = (id: number) => {
     setModalActivate(!modalActivate);
     setCardId(id);
   }
@@ -29,20 +29,33 @@ export default function CardTable({
       <div className='grid grid-cols-2'>
         <Link href={`/dashboard/`}> <ArrowLeftCircleIcon className="w-5" /></Link>
         <h1 className={`${lusitana.className} mb-8 text-xl md:text-2xl`}>
-          Cards
+          Cards - {title}
         </h1>
       </div>
-      <div className='grid grid-cols-3 gap-6'>
-      {card?.map((card,i) => (
-        <div className="flex justify-center min-h-full" key={card.id} >
-          <div className="text-sm hover:text-blue-600 md:p-2 md:px-3 border"
-          style={{ borderColor: title }}
-          onClick={()=>handleModal(i)}
-          key={card.id}>
-            {card.title}
+      <div className='flex flex-row flex-wrap justify-around gap-4 col-3'>
+        {card?.map((card, i) => (
+          <div className="flex flex-col justify-between sm:w-1/3 md:w-1/3 xl:w-1/4 w-full p-4 bg-white border border-gray-200 rounded-lg shadow  dark:bg-gray-800 dark:border-gray-700"
+            style={{ borderBottomColor: title }}
+            key={card.id} 
+            onClick={() => handleModal(i)}>
+            <div>
+              <h5 className="text-xl font-medium text-gray-900 dark:text-white">
+                {card.title}
+              </h5>
+              <span className="block mb-2 text-sm font-small text-gray-900 dark:text-white">
+                {title} Category
+              </span>
+            </div>
+            <div className='flex flex-row justify-between'>
+              <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
+                Revision {card.revision}
+              </div>
+              <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
+                Date  
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
       </div>
 
       {modalActivate && <ModalCard card={card} title={title} id={cardId} handleModal={handleModal}></ModalCard>}
