@@ -34,7 +34,7 @@ export default function CardTable({
       </div>
       <div className='flex flex-row flex-wrap justify-around gap-4 col-3'>
         {card?.map((card, i) => (
-          <div className="flex flex-col justify-between sm:w-1/3 md:w-1/3 xl:w-1/4 w-full p-4 bg-white border border-gray-200 rounded-lg shadow  dark:bg-gray-800 dark:border-gray-700"
+          <div className="flex flex-col justify-between sm:w-1/3 md:w-1/3 xl:w-1/4 w-full p-4 bg-white border border-gray-200 rounded-lg shadow"
             style={{ borderBottomColor: title }}
             key={card.id} 
             onClick={() => handleModal(i)}>
