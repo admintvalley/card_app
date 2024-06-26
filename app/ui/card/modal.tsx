@@ -29,33 +29,33 @@ export default function ModalCard({
       handleModal}>
       <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" ></div>
       <div className="fixed inset-0 z-10 w-screen overflow-y-auto" >
-        <div className="flex mt-28 items-center justify-center p-4 text-center sm:items-center sm:p-0">
-          <div className="  card" onClick={e => {
+        <div className="flex mt-14 items-center justify-center self-center p-4 text-center sm:items-center sm:p-0">
+          <div className="card  text-center " onClick={e => {
             // do not close modal if anything inside modal content is clicked
             e.stopPropagation();
           }}>
 
             {/* front of the card */}
-            <div className={clsx("card__side card__side--front block max-w-[24rem] rounded-lg border border-danger-600 bg-white shadow-secondary-1 dark:bg-surface-dark", flipCard && card[id].description_back && "flipped")} style={{ borderColor: title }} onClick={handleFlip} >
-              <div className="border-b-2 border-neutral-100 px-6 py-3 text-surface dark:border-white/10 dark:text-white flex flex-row justify-between" style={{ borderColor: title }}>
+            <div className={clsx("card__side card__side--front block max-w-[40rem] rounded-lg border border-danger-600 bg-white shadow-secondary-1 dark:bg-surface-dark", flipCard && card[id].description_back && "flipped")} style={{ borderBottomColor: title }} onClick={handleFlip} >
+              <div className="border-b-2 border-neutral-100 px-6 py-3 text-surface dark:border-white/10 dark:text-white flex flex-row justify-between" style={{ borderBottomColor: title }}>
                 <div>{card[id].title}</div>
                 <button onClick={handleModal}><XCircleIcon className="w-5" /></button>
               </div>
               <div className="p-6">
-                <p className="text-base text-danger-200 text-sm">
+                <p className="text-danger-200 text-sm">
                   {card[id].description_front}
                 </p>
               </div>
             </div>
             {/* back of the card */}
            { card[id].description_back &&
-            <div className={clsx("card__side card__side--back block max-w-[24rem] rounded-lg border border-danger-600 bg-white shadow-secondary-1 dark:bg-surface-dark", flipCard && card[id].description_back && "flipped")} style={{ borderColor: title }} onClick={handleFlip} >
-              <div className="border-b-2 border-neutral-100 px-6 py-3 text-surface dark:border-white/10 dark:text-white flex flex-row justify-between" style={{ borderColor: title }}>
+            <div className={clsx("card__side card__side--back block max-w-[40rem] rounded-lg border border-danger-600 bg-white shadow-secondary-1 dark:bg-surface-dark", flipCard && card[id].description_back && "flipped")} style={{ borderBottomColor: title }} onClick={handleFlip} >
+              <div className="border-b-2 border-neutral-100 px-6 py-3 text-surface dark:border-white/10 dark:text-white flex flex-row justify-between" style={{ borderBottomColor: title }}>
                 <div>{card[id].title}</div>
                 <button onClick={handleModal}><XCircleIcon className="w-5" /></button>
               </div>
               <div className="p-6">
-                <p className="text-base text-danger-200 text-sm">
+                <p className="text-danger-200 text-sm">
                   {card[id].description_back}
                 </p>
               </div>

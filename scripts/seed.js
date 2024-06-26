@@ -248,7 +248,7 @@ async function seedCardsTable(client) {
     CREATE TABLE IF NOT EXISTS cards (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
     category_id UUID NOT NULL,
-    title VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL UNIQUE,
     description_front TEXT NOT NULL,
     description_back TEXT,
     revision VARCHAR,
@@ -267,7 +267,7 @@ async function seedCardsTable(client) {
         (card) => client.sql`
         INSERT INTO cards (category_id, title, description_front,description_back, revision, image_url,created_at, updated_at,priority_id)
         VALUES (${card.category_id}, ${card.title},${card.description_front},${card.description_back}, ${card.revision},${card.image_url}, ${card.created_at}, ${card.updated_at}, ${card.priority})
-        ON CONFLICT (id) DO NOTHING;
+        ON CONFLICT (title) DO NOTHING;
       `,
       ),
     );

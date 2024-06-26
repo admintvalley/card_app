@@ -6,6 +6,11 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { signIn } from '@/auth';
 import { AuthError } from 'next-auth';
+import { cookies } from 'next/headers'
+import { SignJWT, jwtVerify } from "jose";
+
+const secretKey = "secret";
+const key = new TextEncoder().encode(secretKey);
 
 const FormSchema = z.object({
   id: z.string(),
@@ -137,4 +142,17 @@ export async function authenticate(
     }
     throw error;
   }
+}
+
+ 
+export async function getSessionData() {
+  const encryptedSessionData = cookies().get('session')?.value
+  return encryptedSessionData ? JSON.parse(await decrypt(encryptedSessionData)) : null
+}
+
+export async function decrypt(input: string): Promise<any> {
+  const { payload } = await jwtVerify(input, key, {
+    algorithms: ["HS256"],
+  });
+  return payload;
 }
