@@ -42,7 +42,7 @@ export default function ModalCard({
                 <button onClick={handleModal}><XCircleIcon className="w-5" /></button>
               </div>
               <div className="p-6">
-                <p className="text-base text-danger-200 text-sm">
+                <p className="text-danger-200 text-sm">
                   {card[id].description_front}
                 </p>
               </div>
@@ -55,7 +55,7 @@ export default function ModalCard({
                 <button onClick={handleModal}><XCircleIcon className="w-5" /></button>
               </div>
               <div className="p-6">
-                <p className="text-base text-danger-200 text-sm">
+                <p className="text-danger-200 text-sm">
                   {card[id].description_back}
                 </p>
               </div>
