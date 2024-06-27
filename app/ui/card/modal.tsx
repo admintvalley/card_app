@@ -36,8 +36,8 @@ export default function ModalCard({
           }}>
 
             {/* front of the card */}
-            <div className={clsx("card__side card__side--front block max-w-[40rem] rounded-lg border border-danger-600 bg-white shadow-secondary-1 dark:bg-surface-dark", flipCard && card[id].description_back && "flipped")} style={{ borderBottomColor: title }} onClick={handleFlip} >
-              <div className="border-b-2 border-neutral-100 px-6 py-3 text-surface dark:border-white/10 dark:text-white flex flex-row justify-between" style={{ borderBottomColor: title }}>
+            <div className={clsx("card__side card__side--front block max-w-[40rem] rounded-lg border border-danger-600 bg-white shadow-secondary-1", flipCard && card[id].description_back && "flipped")} style={{ borderBottomColor: title }} onClick={handleFlip} >
+              <div className="border-b-2 border-neutral-100 px-6 py-3 text-surface  flex flex-row justify-between" style={{ borderBottomColor: title }}>
                 <div>{card[id].title}</div>
                 <button onClick={handleModal}><XCircleIcon className="w-5" /></button>
               </div>
@@ -49,8 +49,8 @@ export default function ModalCard({
             </div>
             {/* back of the card */}
            { card[id].description_back &&
-            <div className={clsx("card__side card__side--back block max-w-[40rem] rounded-lg border border-danger-600 bg-white shadow-secondary-1 dark:bg-surface-dark", flipCard && card[id].description_back && "flipped")} style={{ borderBottomColor: title }} onClick={handleFlip} >
-              <div className="border-b-2 border-neutral-100 px-6 py-3 text-surface dark:border-white/10 dark:text-white flex flex-row justify-between" style={{ borderBottomColor: title }}>
+            <div className={clsx("card__side card__side--back block max-w-[40rem] rounded-lg border border-danger-600 bg-white shadow-secondary-1", flipCard && card[id].description_back && "flipped")} style={{ borderBottomColor: title }} onClick={handleFlip} >
+              <div className="border-b-2 border-neutral-100 px-6 py-3 text-surface flex flex-row justify-between" style={{ borderBottomColor: title }}>
                 <div>{card[id].title}</div>
                 <button onClick={handleModal}><XCircleIcon className="w-5" /></button>
               </div>
