@@ -39,18 +39,18 @@ export default function CardTable({
             key={card.id} 
             onClick={() => handleModal(i)}>
             <div>
-              <h5 className="text-xl font-medium text-gray-900 dark:text-white">
+              <h5 className="text-xl font-medium text-gray-900">
                 {card.title}
               </h5>
-              <span className="block mb-2 text-sm font-small text-gray-900 dark:text-white">
+              <span className="block mb-2 text-sm font-small text-gray-900">
                 {title} Category
               </span>
             </div>
             <div className='flex flex-row justify-between'>
-              <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
+              <div className="text-sm font-medium text-gray-500 ">
                 Revision {card.revision}
               </div>
-              <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
+              <div className="text-sm font-medium text-gray-500 ">
                 Date  
               </div>
             </div>
