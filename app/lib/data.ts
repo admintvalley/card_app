@@ -160,7 +160,7 @@ export async function fetchInvoicesPages(query: string) {
 
 export async function fetchInvoiceById(id: string) {
   noStore();
-
+  console.log("fetchInvoiceById",id)
   try {
     const data = await sql<InvoiceForm>`
       SELECT
@@ -172,7 +172,7 @@ export async function fetchInvoiceById(id: string) {
       WHERE invoices.id = ${id};
     `;
 
-    const invoice = data.rows.map((invoice) => ({
+    const invoice = data.rows.map((invoice:any) => ({
       ...invoice,
       // Convert amount from cents to dollars
       amount: invoice.amount / 100,
@@ -184,9 +184,29 @@ export async function fetchInvoiceById(id: string) {
     throw new Error('Failed to fetch invoice.');
   }
 }
+export async function fetchCardByWord(word: string) {
+  noStore();
+  console.log("fetchCardByWord",word)
+  try {
+    const data = await sql<InvoiceForm>`
+      SELECT * 
+      FROM cards
+      WHERE title ILIKE ${`%${word}%`}  
+      OR description_front ILIKE ${`%${word}%`}  
+      OR description_back ILIKE ${`%${word}%`};`
+
+    return data.rows;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch invoice.');
+  }
+}
 
 export async function fetchCustomers() {
+  console.log("fetchCustomers")
+
   try {
+    
     const data = await sql<CustomerField>`
       SELECT
         id,
@@ -225,7 +245,7 @@ export async function fetchFilteredCustomers(query: string) {
 		ORDER BY customers.name ASC
 	  `;
 
-    const customers = data.rows.map((customer) => ({
+    const customers = data.rows.map((customer:any) => ({
       ...customer,
       total_pending: formatCurrency(customer.total_pending),
       total_paid: formatCurrency(customer.total_paid),
