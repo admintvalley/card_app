@@ -11,39 +11,40 @@ export default async function CardsTable({
   query: string;
   currentPage: number;
 }) {
+
   const cards = await fetchCardByWord(query);
 
   return (
-    <div className="mt-6 flow-root">
-      <div className="inline-block min-w-full align-middle">
-        <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
-          <div className="md:hidden">
-            {cards?.map((cards:CardTableType) => (
+    <div className="mt-6 mb-6 w-full">
+       <div className=''>
+      {cards && <div className=" min-w-full ">
+        <div className="flex flex-row flex-wrap justify-around gap-4 col-3">
+            { cards != false ? cards?.map((card:CardTableType) => (
               <div
-                key={cards.id}
-                className="mb-2 w-full rounded-md bg-white p-4"
-              >
-                <div className="flex items-center justify-between border-b pb-4">
-                  <div>
-                    <div className="mb-2 flex items-center">
-                     
-                      <p>{cards.title}</p>
-                    </div>
-                    <p className="text-sm text-gray-500">{cards.category_id}</p>
-                  </div>
-                </div>
-                <div className="flex w-full items-center justify-between pt-4">
-                  <div>
-                    <p className="text-xl font-medium">
-                      {cards.description_front}
-                    </p>
-                    <p>{cards.description_back}</p>
-                  </div>
-                </div>
+                className="sm:w-1/3 md:w-1/3 xl:w-1/4 w-full p-4 bg-white border border-2 rounded-lg shadow"
+            style={{ borderBottomColor: card.categories_title }}
+            key={card.id} >
+            <div>
+              <h5 className="text-xl font-medium text-gray-900">
+                {card.title}
+              </h5>
+              <span className="block mb-2 text-sm font-small text-gray-900">
+                {card.categories_title} Category
+              </span>
+            </div>
+            <div className='flex flex-row justify-between'>
+              <div className="text-sm font-medium text-gray-500 ">
+                Revision {card.revision}
               </div>
-            ))}
+              <div className="text-sm font-medium text-gray-500 ">
+                Date  
+              </div>
+            </div>
           </div>
+
+            )): <h1>There is no card with this terms</h1>}
         </div>
+      </div>}
       </div>
     </div>
   );

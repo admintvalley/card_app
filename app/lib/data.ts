@@ -184,21 +184,28 @@ export async function fetchInvoiceById(id: string) {
     throw new Error('Failed to fetch invoice.');
   }
 }
+
 export async function fetchCardByWord(word: string) {
   noStore();
-  console.log("fetchCardByWord",word)
+  if(word!= ""){
   try {
     const data = await sql<InvoiceForm>`
-      SELECT * 
+      SELECT cards.title, cards.id,cards.revision , card_categories.title AS categories_title
       FROM cards
-      WHERE title ILIKE ${`%${word}%`}  
-      OR description_front ILIKE ${`%${word}%`}  
-      OR description_back ILIKE ${`%${word}%`};`
+      JOIN card_categories ON cards.category_id = card_categories.id
+      WHERE cards.title ILIKE ${`%${word}%`}  
+      OR cards.description_front ILIKE ${`%${word}%`}  
+      OR cards.description_back ILIKE ${`%${word}%`}
+      OR card_categories.title ILIKE ${`%${word}%`}
+      ;`
+      console.error('data.rows:', data.rows);
 
     return data.rows;
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch invoice.');
+  }} else {
+    return false;
   }
 }
 
@@ -267,6 +274,8 @@ export async function getUser(email: string) {
     throw new Error('Failed to fetch user.');
   }
 }
+
+
 
 export async function fetchCardCategories() {
   try {
