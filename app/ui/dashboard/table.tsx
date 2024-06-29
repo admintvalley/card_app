@@ -18,7 +18,7 @@ export default async function CardsTable({
     <div className="mt-6 mb-6 w-full">
        <div className=''>
       {cards && <div className=" min-w-full ">
-        <div className="flex flex-row flex-wrap justify-around gap-4 col-3">
+        <div className="flex flex-row flex-wrap justify-center gap-4 col-3">
             { cards != false ? cards?.map((card:CardTableType) => (
               <div
                 className="sm:w-1/3 md:w-1/3 xl:w-1/4 w-full p-4 bg-white border border-2 rounded-lg shadow"
