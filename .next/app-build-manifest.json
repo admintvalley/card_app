@@ -3,6 +3,7 @@
     "/dashboard/(overview)/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
+      "static/css/app/dashboard/(overview)/page.css",
       "static/chunks/app/dashboard/(overview)/page.js"
     ],
     "/dashboard/(overview)/loading": [

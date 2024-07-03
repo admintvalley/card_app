@@ -190,7 +190,7 @@ export async function fetchCardByWord(word: string) {
   if(word!= ""){
   try {
     const data = await sql<InvoiceForm>`
-      SELECT cards.title, cards.id,cards.revision , card_categories.title AS categories_title
+      SELECT cards.title, cards.id,cards.revision,cards.description_front,cards.description_back, card_categories.title AS categories_title
       FROM cards
       JOIN card_categories ON cards.category_id = card_categories.id
       WHERE cards.title ILIKE ${`%${word}%`}  
