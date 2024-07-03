@@ -21,7 +21,6 @@ export default async function Page({
   const customers = await fetchFilteredCustomers(query);
 
   const sessionData = getSessionData()
-  console.log("sessionData",sessionData)
   return (
     <main> 
       

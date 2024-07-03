@@ -22,12 +22,10 @@ export async function fetchRevenue() {
     // Artificially delay a response for demo purposes.
     // Don't do this in production :)
 
-    // console.log('Fetching revenue data...');
     // await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const data = await sql<Revenue>`SELECT * FROM revenue`;
 
-    console.log('Data fetch completed after 3 seconds.');
 
     return data.rows;
   } catch (error) {
@@ -160,7 +158,6 @@ export async function fetchInvoicesPages(query: string) {
 
 export async function fetchInvoiceById(id: string) {
   noStore();
-  console.log("fetchInvoiceById",id)
   try {
     const data = await sql<InvoiceForm>`
       SELECT
@@ -210,7 +207,6 @@ export async function fetchCardByWord(word: string) {
 }
 
 export async function fetchCustomers() {
-  console.log("fetchCustomers")
 
   try {
     
@@ -305,7 +301,6 @@ export async function fetchCardsByCategoryTitle(title: string) {
       WHERE title = ${title};
     `;
     const categoryID = dataCategoryCard.rows;
-    console.log('Database info cards:', categoryID[0].id);
     
     const data = await sql<CardTableType>`
     SELECT
@@ -313,7 +308,6 @@ export async function fetchCardsByCategoryTitle(title: string) {
     FROM cards
     WHERE category_id = ${categoryID[0].id};
   `;
-  console.log('Database info cards:', data.rows);
 
     return data.rows;
   } catch (err) {
