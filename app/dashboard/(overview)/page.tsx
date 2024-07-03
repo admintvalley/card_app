@@ -39,12 +39,12 @@ export default async function Page({
           <CardCategories/>
         </Suspense>
       </div>
-        <Suspense fallback={<RevenueChartSkeleton />}>
+        {/* <Suspense fallback={<RevenueChartSkeleton />}>
           <RevenueChart />
         </Suspense>
         <Suspense fallback={<LatestInvoicesSkeleton />}>
           <LatestInvoices />
-        </Suspense>
+        </Suspense> */}
       
       </div>
     </main>
