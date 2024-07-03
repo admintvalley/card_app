@@ -1,6 +1,9 @@
 // This file contains type definitions for your data.
 // It describes the shape of the data, and what data type each property should accept.
 // For simplicity of teaching, we're manually defining these types.
+
+import { boolean } from "zod";
+
 // However, these types are generated automatically if you're using an ORM such as Prisma.
 export type User = {
   id: string;
@@ -94,7 +97,7 @@ export type CategoriesTableType = {
 };
 
 export type CardTableType = {
-  categories_title: string;
+  categories_title: any,
   id: string,
   category_id:string,
   title: string,
