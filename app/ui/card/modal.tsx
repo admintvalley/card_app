@@ -4,7 +4,7 @@ import Search from '@/app/ui/search';
 import { CardTableType } from '@/app/lib/definitions';
 import './style.css'
 import Link from 'next/link';
-import { ArrowLeftCircleIcon, LockClosedIcon, XCircleIcon } from '@heroicons/react/24/outline';
+import { ArrowLeftCircleIcon, ArrowUturnRightIcon, LockClosedIcon, XCircleIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 import clsx from 'clsx';
 
@@ -21,7 +21,6 @@ export default function ModalCard({
     setFlipCard(!flipCard);
   }
 
-  console.log('card id', id)
 
   return (
     <div className="relative z-10 sl" aria-labelledby="modal-title" role="dialog" aria-modal="true" onClick={
@@ -36,8 +35,8 @@ export default function ModalCard({
           }}>
 
             {/* front of the card */}
-            <div className={clsx("card__side card__side--front block max-w-[40rem] rounded-lg border border-danger-600 bg-white shadow-secondary-1", flipCard && card[id].description_back && "flipped")} style={{ borderBottomColor: title }} onClick={handleFlip} >
-              <div className="border-b-2 border-neutral-100 px-6 py-3 text-surface  flex flex-row justify-between" style={{ borderBottomColor: title }}>
+            <div className={clsx("card__side card__side--front block max-w-[40rem] rounded-lg border border-danger-600 bg-white shadow-secondary-1", flipCard && card[id].description_back && "flipped")} style={{ borderBottomColor: title || card[id].categories_title }} onClick={handleFlip} >
+              <div className="border-b-2 border-neutral-100 px-6 py-3 text-surface  flex flex-row justify-between" style={{ borderBottomColor: title || card[id].categories_title }}>
                 <div>{card[id].title}</div>
                 <button onClick={handleModal}><XCircleIcon className="w-5" /></button>
               </div>
@@ -46,11 +45,15 @@ export default function ModalCard({
                   {card[id].description_front}
                 </p>
               </div>
+              <div className='m-6 flex flex-row-reverse'>
+              <ArrowUturnRightIcon className="w-6  justify-end"></ArrowUturnRightIcon> 
+              </div>
+              
             </div>
             {/* back of the card */}
            { card[id].description_back &&
-            <div className={clsx("card__side card__side--back block max-w-[40rem] rounded-lg border border-danger-600 bg-white shadow-secondary-1", flipCard && card[id].description_back && "flipped")} style={{ borderBottomColor: title }} onClick={handleFlip} >
-              <div className="border-b-2 border-neutral-100 px-6 py-3 text-surface flex flex-row justify-between" style={{ borderBottomColor: title }}>
+            <div className={clsx("card__side card__side--back block max-w-[40rem] rounded-lg border border-danger-600 bg-white shadow-secondary-1", flipCard && card[id].description_back && "flipped")} style={{ borderBottomColor: title || card[id].categories_title }} onClick={handleFlip} >
+              <div className="border-b-2 border-neutral-100 px-6 py-3 text-surface flex flex-row justify-between" style={{ borderBottomColor: title || card[id].categories_title }}>
                 <div>{card[id].title}</div>
                 <button onClick={handleModal}><XCircleIcon className="w-5" /></button>
               </div>
@@ -58,6 +61,10 @@ export default function ModalCard({
                 <p className="text-danger-200 text-sm">
                   {card[id].description_back}
                 </p>
+              </div>            
+              
+              <div className='m-6 flex flex-row-reverse'>
+              <ArrowUturnRightIcon className="w-6  justify-end"></ArrowUturnRightIcon> 
               </div>
             </div>}
           </div>

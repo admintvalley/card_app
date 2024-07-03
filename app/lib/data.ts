@@ -160,7 +160,7 @@ export async function fetchInvoicesPages(query: string) {
 
 export async function fetchInvoiceById(id: string) {
   noStore();
-
+  console.log("fetchInvoiceById",id)
   try {
     const data = await sql<InvoiceForm>`
       SELECT
@@ -172,7 +172,7 @@ export async function fetchInvoiceById(id: string) {
       WHERE invoices.id = ${id};
     `;
 
-    const invoice = data.rows.map((invoice) => ({
+    const invoice = data.rows.map((invoice:any) => ({
       ...invoice,
       // Convert amount from cents to dollars
       amount: invoice.amount / 100,
@@ -185,8 +185,35 @@ export async function fetchInvoiceById(id: string) {
   }
 }
 
-export async function fetchCustomers() {
+export async function fetchCardByWord(word: string) {
+  noStore();
+  if(word!= ""){
   try {
+    const data = await sql<InvoiceForm>`
+      SELECT cards.title, cards.id,cards.revision,cards.description_front,cards.description_back, card_categories.title AS categories_title
+      FROM cards
+      JOIN card_categories ON cards.category_id = card_categories.id
+      WHERE cards.title ILIKE ${`%${word}%`}  
+      OR cards.description_front ILIKE ${`%${word}%`}  
+      OR cards.description_back ILIKE ${`%${word}%`}
+      OR card_categories.title ILIKE ${`%${word}%`}
+      ;`
+      console.error('data.rows:', data.rows);
+
+    return data.rows;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch invoice.');
+  }} else {
+    return false;
+  }
+}
+
+export async function fetchCustomers() {
+  console.log("fetchCustomers")
+
+  try {
+    
     const data = await sql<CustomerField>`
       SELECT
         id,
@@ -225,7 +252,7 @@ export async function fetchFilteredCustomers(query: string) {
 		ORDER BY customers.name ASC
 	  `;
 
-    const customers = data.rows.map((customer) => ({
+    const customers = data.rows.map((customer:any) => ({
       ...customer,
       total_pending: formatCurrency(customer.total_pending),
       total_paid: formatCurrency(customer.total_paid),
@@ -247,6 +274,8 @@ export async function getUser(email: string) {
     throw new Error('Failed to fetch user.');
   }
 }
+
+
 
 export async function fetchCardCategories() {
   try {

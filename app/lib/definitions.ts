@@ -94,6 +94,7 @@ export type CategoriesTableType = {
 };
 
 export type CardTableType = {
+  categories_title: string;
   id: string,
   category_id:string,
   title: string,
