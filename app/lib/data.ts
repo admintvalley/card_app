@@ -202,7 +202,7 @@ export async function fetchCardByWord(word: string) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch invoice.');
   }} else {
-    return false;
+    return null;
   }
 }
 
