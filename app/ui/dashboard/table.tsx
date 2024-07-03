@@ -9,7 +9,6 @@ export default async function CardsTable({
 }) {
 
   const cards = await fetchCardByWord(query);
-
   return (
     <div className="mt-6 mb-6 w-full">
       {cards &&

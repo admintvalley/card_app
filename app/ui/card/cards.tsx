@@ -23,7 +23,8 @@ export default function CardTable({
     setModalActivate(!modalActivate);
     setCardId(id);
   }
-  
+  console.log("table", card.length)
+
   return (
     <div className="w-full">
       { title && 
@@ -34,7 +35,7 @@ export default function CardTable({
         </h1>
       </div>}
       <div className='flex flex-row flex-wrap justify-around gap-4 col-3'>
-        {card?.map((card, i) => (
+        {card.length != 0 ? card?.map((card, i) => (
           <div className="flex flex-col justify-between sm:w-1/3 md:w-1/3 xl:w-1/4 w-full p-4 bg-white border border-gray-200 rounded-lg shadow"
             style={{ borderBottomColor: title || card.categories_title  }}
             key={card.id} 
@@ -51,12 +52,9 @@ export default function CardTable({
               <div className="text-sm font-medium text-gray-500 ">
                 Revision {card.revision}
               </div>
-              {/* <div className="text-sm font-medium text-gray-500 ">
-                Date  
-              </div> */}
             </div>
           </div>
-        ))
+        )) : <h1>There is no card with this terms</h1>
        }
       </div>
 
