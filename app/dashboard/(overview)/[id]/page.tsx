@@ -5,7 +5,6 @@ import { notFound } from 'next/navigation';
 
 export default async function Page({ params }: { params: { id: string } }) {
     const id = params.id;
-    console.log("result of cards by word", params)
 
     const [cards] = await Promise.all([
       fetchCardByWord(id),

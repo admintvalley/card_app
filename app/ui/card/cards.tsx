@@ -23,7 +23,6 @@ export default function CardTable({
     setModalActivate(!modalActivate);
     setCardId(id);
   }
-  console.log("cards tsx",card.length)
   return (
     <div className="w-full">
       { title && 

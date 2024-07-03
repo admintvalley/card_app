@@ -23,7 +23,6 @@ async function seedUsers(client) {
       );
     `;
 
-    console.log(`Created "users" table`);
 
     // Insert data into the "users" table
     const insertedUsers = await Promise.all(
@@ -37,7 +36,6 @@ async function seedUsers(client) {
       }),
     );
 
-    console.log(`Seeded ${insertedUsers.length} users`);
 
     return {
       createTable,
@@ -64,7 +62,6 @@ async function seedInvoices(client) {
   );
 `;
 
-    console.log(`Created "invoices" table`);
 
     // Insert data into the "invoices" table
     const insertedInvoices = await Promise.all(
@@ -77,7 +74,6 @@ async function seedInvoices(client) {
       ),
     );
 
-    console.log(`Seeded ${insertedInvoices.length} invoices`);
 
     return {
       createTable,
@@ -103,7 +99,6 @@ async function seedCustomers(client) {
       );
     `;
 
-    console.log(`Created "customers" table`);
 
     // Insert data into the "customers" table
     const insertedCustomers = await Promise.all(
@@ -116,7 +111,6 @@ async function seedCustomers(client) {
       ),
     );
 
-    console.log(`Seeded ${insertedCustomers.length} customers`);
 
     return {
       createTable,
@@ -138,7 +132,6 @@ async function seedRevenue(client) {
       );
     `;
 
-    console.log(`Created "revenue" table`);
 
     // Insert data into the "revenue" table
     const insertedRevenue = await Promise.all(
@@ -151,7 +144,6 @@ async function seedRevenue(client) {
       ),
     );
 
-    console.log(`Seeded ${insertedRevenue.length} revenue`);
 
     return {
       createTable,
@@ -174,7 +166,6 @@ async function seedCardPriority(client) {
       );
     `;
 
-    console.log(`Created "cards_priority" table`);
 
     // Insert data into the "cards_priority" table
     const insertedCardPriority = await Promise.all(
@@ -187,7 +178,6 @@ async function seedCardPriority(client) {
       ),
     );
 
-    console.log(`Seeded ${cardPriority.length} cards_priority`);
 
     return {
       createTable,
@@ -214,7 +204,6 @@ async function seedCardCategories(client) {
   );
 `;
 
-    console.log(`Created "card_categories" table`);
     
     // Insert data into the "card_categories" table
     const insertedCategories = await Promise.all(
@@ -227,7 +216,6 @@ async function seedCardCategories(client) {
       ),
     );
 
-    console.log(`Seeded ${insertedCategories.length} card_categories`);
 
     return {
       createTable,
@@ -259,7 +247,6 @@ async function seedCardsTable(client) {
   );
 `;
 
-    console.log(`Created "card_categories" table`);
 
     // Insert data into the "card_categories" table
     const insertedCards = await Promise.all(
@@ -272,7 +259,6 @@ async function seedCardsTable(client) {
       ),
     );
 
-    console.log(`Seeded ${insertedCards.length} cards`);
 
     return {
       createTable,
