@@ -9,13 +9,12 @@ export default async function CardsTable({
 }) {
 
   const cards = await fetchCardByWord(query);
-  const title = cards.categories_title || '';
 
   return (
     <div className="mt-6 mb-6 w-full">
       {cards &&
         <div className="flex flex-row flex-wrap justify-center gap-2 col-3">
-            { cards != false ?  <CardTable card={cards} title={''}></CardTable>
+            { cards != null ?  <CardTable card={cards} title={''}></CardTable>
 
             : <h1>There is no card with this terms</h1>}
       </div>
